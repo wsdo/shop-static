@@ -1,140 +1,399 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/product.css">
-</head>
-<body>
-<header class="header">
-  <symbol id="icon-cart" viewBox="0 0 38 32">
-    <title>cart</title>
-    <path class="path1" d="M37.759 0h-4.133c-0.733 0.004-1.337 0.549-1.434 1.255l-0.546 4.342c-0.081 0.484-0.496 0.849-0.997 0.849-0.005 0-0.009-0-0.014-0h-27.604c-0.003 0-0.007-0-0.011-0-1.674 0-3.031 1.357-3.031 3.031 0 0.34 0.056 0.666 0.159 0.971l2.52 8.062c0.385 1.194 1.486 2.043 2.785 2.043 0.126 0 0.25-0.008 0.372-0.023l22.983 0.002c0.515 0.131 0.626 0.768 0.626 1.283 0.005 0.044 0.009 0.095 0.009 0.146 0 0.501-0.294 0.933-0.718 1.134l-22.439 0.003c-0.354 0-0.642 0.287-0.642 0.642s0.287 0.642 0.642 0.642h22.745l0.131-0.071c0.919-0.392 1.551-1.287 1.551-2.33 0-0.058-0.002-0.116-0.006-0.173 0.021-0.108 0.033-0.24 0.033-0.376 0-1.072-0.732-1.973-1.724-2.23l-23.357-0.004c-0.063 0.008-0.135 0.013-0.209 0.013-0.719 0-1.332-0.455-1.566-1.093l-2.53-8.095c-0.048-0.154-0.076-0.332-0.076-0.515 0-0.973 0.782-1.764 1.752-1.778h27.657c1.159-0.004 2.112-0.883 2.232-2.011l0.547-4.345c0.010-0.083 0.078-0.147 0.161-0.152l4.133-0c0.354 0 0.642-0.287 0.642-0.642s-0.287-0.642-0.642-0.642z"></path>
-    <path class="path2" d="M31.323 9.69c-0.022-0.003-0.048-0.004-0.074-0.004-0.328 0-0.598 0.248-0.633 0.567l-0.809 7.268c-0.003 0.022-0.004 0.048-0.004 0.074 0 0.328 0.248 0.598 0.567 0.633l0.074 0c0.001 0 0.003 0 0.004 0 0.327 0 0.596-0.246 0.632-0.563l0.809-7.268c0.003-0.022 0.004-0.048 0.004-0.074 0-0.328-0.248-0.598-0.567-0.633z"></path>
-    <path class="path3" d="M27.514 25.594c-1.769 0-3.203 1.434-3.203 3.203s1.434 3.203 3.203 3.203c1.769 0 3.203-1.434 3.203-3.203s-1.434-3.203-3.203-3.203zM27.514 30.717c-1.060 0-1.92-0.86-1.92-1.92s0.86-1.92 1.92-1.92c1.060 0 1.92 0.86 1.92 1.92s-0.86 1.92-1.92 1.92z"></path>
-    <path class="path4" d="M9.599 25.594c-1.769 0-3.203 1.434-3.203 3.203s1.434 3.203 3.203 3.203c1.769 0 3.203-1.434 3.203-3.203s-1.434-3.203-3.203-3.203zM9.599 30.717c-1.060 0-1.92-0.86-1.92-1.92s0.86-1.92 1.92-1.92c1.060 0 1.92 0.86 1.92 1.92s-0.86 1.92-1.92 1.92z"></path>
-  </symbol>
-  <div class="navbar">
-    <div class="navbar-left-container">
-      <a href="/">
-        <img class="navbar-brand-logo" src="../img/logo.png"></a>
-    </div>
-    <div class="navbar-right-container" style="display: flex;">
-      <div class="navbar-menu-container">
-        <!--<a href="/" class="navbar-link">我的账户</a>-->
-        <span class="navbar-link"></span>
-        <a href="javascript:void(0)" class="navbar-link">Login</a>
-        <a href="javascript:void(0)" class="navbar-link">Logout</a>
-        <div class="navbar-cart-container">
-          <span class="navbar-cart-count"></span>
-          <a class="navbar-link navbar-cart-link" href="/#/cart">
-            <svg class="navbar-cart-logo">
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-cart"></use>
-            </svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</header>
-<div class="nav-breadcrumb-wrap">
-  <div class="container">
-    <nav class="nav-breadcrumb">
-      <a href="/">Home</a>
-      <span>Goods</span>
-    </nav>
-  </div>
-</div>
-<div class="accessory-result-page accessory-page">
-  <div class="container">
-    <div class="filter-nav">
-      <span class="sortby">Sort by:</span>
-      <a href="javascript:void(0)" class="default cur">Default</a>
-      <a href="javascript:void(0)" class="price">Price <svg class="icon icon-arrow-short"><use xlink:href="#icon-arrow-short"></use></svg></a>
-      <a href="javascript:void(0)" class="filterby stopPop">Filter by</a>
-    </div>
-    <div class="accessory-result">
-      <!-- filter -->
-      <div class="filter stopPop" id="filter">
-        <dl class="filter-price">
-          <dt>Price:</dt>
-          <dd><a href="javascript:void(0)">All</a></dd>
-          <dd>
-            <a href="javascript:void(0)">0 - 100</a>
-          </dd>
-          <dd>
-            <a href="javascript:void(0)">100 - 500</a>
-          </dd>
-          <dd>
-            <a href="javascript:void(0)">500 - 1000</a>
-          </dd>
-          <dd>
-            <a href="javascript:void(0)">1000 - 2000</a>
-          </dd>
-        </dl>
-      </div>
+    <link rel="stylesheet" href="../style.css">
 
-      <!-- search result accessories list -->
-      <div class="accessory-list-wrap">
-        <div class="accessory-list col-4">
-          <ul>
-            <li>
-              <div class="pic">
-                <a href="#"><img src="../img/1.jpg" alt=""></a>
-              </div>
-              <div class="main">
-                <div class="name">XX</div>
-                <div class="price">999</div>
-                <div class="btn-area">
-                  <a href="javascript:;" class="btn btn--m">加入购物车</a>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="pic">
-                <a href="#"><img src="../img/2.jpg" alt=""></a>
-              </div>
-              <div class="main">
-                <div class="name">XX</div>
-                <div class="price">1000</div>
-                <div class="btn-area">
-                  <a href="javascript:;" class="btn btn--m">加入购物车</a>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="pic">
-                <a href="#"><img src="../img/3.jpg" alt=""></a>
-              </div>
-              <div class="main">
-                <div class="name">XX</div>
-                <div class="price">500</div>
-                <div class="btn-area">
-                  <a href="javascript:;" class="btn btn--m">加入购物车</a>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="pic">
-                <a href="#"><img src="../img/4.jpg" alt=""></a>
-              </div>
-              <div class="main">
-                <div class="name">XX</div>
-                <div class="price">2499</div>
-                <div class="btn-area">
-                  <a href="javascript:;" class="btn btn--m">加入购物车</a>
-                </div>
-              </div>
-            </li>
-          </ul>
+</head>
+
+<body>
+
+    <div class="site-header" style="clear:both;">
+        <div class="container">
+            <div class="header-logo">
+                <a href="index.php" title="小米官网"><img src="img/logo.png" /></a>
+            </div>
+            <div class="header-nav">
+                <ul class="nav-list">
+                    <li class="nav-category">
+                        <a class="btn-category-list" href="catalog.php" style="display:none;">全部商品分类</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="link" href="category.php?id=76"><span>购买电视与平板</span></a>
+                        <div class='item-children'>
+                            <div class="container">
+                                <ul class="children-list clearfix">
+                                    <li class="first">
+                                        <div class="figure figure-thumb">
+                                            <a href="goods.php?id=27"><img src="images/201507/thumb_img/27_thumb_G_1437074702008.jpg" alt="小米电视2 40英寸"></a>
+                                        </div>
+                                        <div class="title"><a href="goods.php?id=27">小米电视2 40英寸</a></div>
+                                        <p class="price">2200<em>元</em>元</p>
+                                    </li>
+                                    <li class="first">
+                                        <div class="figure figure-thumb">
+                                            <a href="goods.php?id=28"><img src="images/201507/thumb_img/28_thumb_G_1437074792369.jpg" alt="小米平板 16G"></a>
+                                        </div>
+                                        <div class="title"><a href="goods.php?id=28">小米平板 16G</a></div>
+                                        <p class="price">1299<em>元</em>元</p>
+                                    </li>
+                                    <li class="first">
+                                        <div class="figure figure-thumb">
+                                            <a href="goods.php?id=29"><img src="images/201507/thumb_img/29_thumb_G_1437074933275.jpg" alt="小米盒子增强版 1G"></a>
+                                        </div>
+                                        <div class="title"><a href="goods.php?id=29">小米盒子增强版 1G</a></div>
+                                        <p class="price">299<em>元</em>元</p>
+                                    </li>
+                                    <li class="first">
+                                        <div class="figure figure-thumb">
+                                            <a href="goods.php?id=53"><img src="images/201508/thumb_img/53_thumb_G_1439511514539.jpg" alt="小米电视2S48英寸"></a>
+                                        </div>
+                                        <div class="title"><a href="goods.php?id=53">小米电视2S48英寸</a></div>
+                                        <p class="price">2999<em>元</em>元</p>
+                                    </li>
+                                    <li class="first">
+                                        <div class="figure figure-thumb">
+                                            <a href="goods.php?id=77"><img src="images/201508/thumb_img/77_thumb_G_1440984390480.jpg" alt="小米电视/盒子遥控器"></a>
+                                        </div>
+                                        <div class="title"><a href="goods.php?id=77">小米电视/盒子遥控器</a></div>
+                                        <p class="price">29<em>元</em>元</p>
+                                    </li>
+                                    <li class="first">
+                                        <div class="figure figure-thumb">
+                                            <a href="goods.php?id=76"><img src="images/201508/thumb_img/76_thumb_G_1440984280864.jpg" alt="小米盒子mini版"></a>
+                                        </div>
+                                        <div class="title"><a href="goods.php?id=76">小米盒子mini版</a></div>
+                                        <p class="price">199<em>元</em>元</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="link" href="category.php?id=69"><span>购买手机</span></a>
+                        <div class='item-children'>
+                            <div class="container">
+                                <ul class="children-list clearfix">
+                                    <li class="first">
+                                        <div class="figure figure-thumb">
+                                            <a href="goods.php?id=82"><img src="images/201509/thumb_img/82_thumb_G_1441050801926.jpg" alt="红米手机2A"></a>
+                                        </div>
+                                        <div class="title"><a href="goods.php?id=82">红米手机2A</a></div>
+                                        <p class="price">899<em>元</em>元</p>
+                                    </li>
+                                    <li class="first">
+                                        <div class="figure figure-thumb">
+                                            <a href="goods.php?id=80"><img src="images/201509/thumb_img/80_thumb_G_1441050558701.jpg" alt="小米NOTE"></a>
+                                        </div>
+                                        <div class="title"><a href="goods.php?id=80">小米NOTE</a></div>
+                                        <p class="price">2199<em>元</em>元</p>
+                                    </li>
+                                    <li class="first">
+                                        <div class="figure figure-thumb">
+                                            <a href="goods.php?id=56"><img src="images/201508/thumb_img/56_thumb_G_1440717641715.jpg" alt="小米手机4"></a>
+                                        </div>
+                                        <div class="title"><a href="goods.php?id=56">小米手机4</a></div>
+                                        <p class="price">1499<em>元</em>元</p>
+                                    </li>
+                                    <li class="first">
+                                        <div class="figure figure-thumb">
+                                            <a href="goods.php?id=78"><img src="images/201509/thumb_img/78_thumb_G_1441050387337.jpg" alt="红米Note2"></a>
+                                        </div>
+                                        <div class="title"><a href="goods.php?id=78">红米Note2</a></div>
+                                        <p class="price">799<em>元</em>元</p>
+                                    </li>
+                                    <li class="first">
+                                        <div class="figure figure-thumb">
+                                            <a href="goods.php?id=81"><img src="images/201509/thumb_img/81_thumb_G_1441050609661.jpg" alt="红米手机2"></a>
+                                        </div>
+                                        <div class="title"><a href="goods.php?id=81">红米手机2</a></div>
+                                        <p class="price">599<em>元</em>元</p>
+                                    </li>
+                                    <li class="first">
+                                        <div class="figure figure-thumb">
+                                            <a href="goods.php?id=79"><img src="images/201509/thumb_img/79_thumb_G_1441050485953.jpg" alt="小米Note顶配版 合约机"></a>
+                                        </div>
+                                        <div class="title"><a href="goods.php?id=79">小米Note顶配版 合约机</a></div>
+                                        <p class="price">2999<em>元</em>元</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="link" href="category.php?id=101"><span>耳机音箱与存储卡</span></a>
+                        <div class='item-children'>
+                            <div class="container">
+                                <ul class="children-list clearfix">
+                                    <li class="first">
+                                        <div class="figure figure-thumb">
+                                            <a href="goods.php?id=96"><img src="images/201509/thumb_img/96_thumb_G_1441738537157.jpg" alt="QCY派Q8蓝牙耳机"></a>
+                                        </div>
+                                        <div class="title"><a href="goods.php?id=96">QCY派Q8蓝牙耳机</a></div>
+                                        <p class="price">60<em>元</em>元</p>
+                                    </li>
+                                    <li class="first">
+                                        <div class="figure figure-thumb">
+                                            <a href="goods.php?id=103"><img src="images/201509/thumb_img/103_thumb_G_1441738795942.jpg" alt="铁三角COR150入耳式耳机"></a>
+                                        </div>
+                                        <div class="title"><a href="goods.php?id=103">铁三角COR150入耳式耳机</a></div>
+                                        <p class="price">139<em>元</em>元</p>
+                                    </li>
+                                    <li class="first">
+                                        <div class="figure figure-thumb">
+                                            <a href="goods.php?id=38"><img src="images/201507/thumb_img/38_thumb_G_1437082667838.jpg" alt="小米活塞耳机 炫彩版"></a>
+                                        </div>
+                                        <div class="title"><a href="goods.php?id=38">小米活塞耳机 炫彩版</a></div>
+                                        <p class="price">39<em>元</em>元</p>
+                                    </li>
+                                    <li class="first">
+                                        <div class="figure figure-thumb">
+                                            <a href="goods.php?id=30"><img src="images/201507/thumb_img/30_thumb_G_1437075007558.jpg" alt="小米头戴式耳机"></a>
+                                        </div>
+                                        <div class="title"><a href="goods.php?id=30">小米头戴式耳机</a></div>
+                                        <p class="price">499<em>元</em>元</p>
+                                    </li>
+                                    <li class="first">
+                                        <div class="figure figure-thumb">
+                                            <a href="goods.php?id=47"><img src="images/201508/thumb_img/47_thumb_G_1439331077002.jpg" alt="米兔手机U盘升级版"></a>
+                                        </div>
+                                        <div class="title"><a href="goods.php?id=47">米兔手机U盘升级版</a></div>
+                                        <p class="price">50<em>元</em>元</p>
+                                    </li>
+                                    <li class="first">
+                                        <div class="figure figure-thumb">
+                                            <a href="goods.php?id=46"><img src="images/201507/thumb_img/46_thumb_G_1437092278369.jpg" alt="小钢炮蓝牙音箱"></a>
+                                        </div>
+                                        <div class="title"><a href="goods.php?id=46">小钢炮蓝牙音箱</a></div>
+                                        <p class="price">129<em>元</em>元</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="link" href="category.php?id=108"><span>保护套与贴膜</span></a>
+                        <div class='item-children'>
+                            <div class="container">
+                                <ul class="children-list clearfix">
+                                    <li class="first">
+                                        <div class="figure figure-thumb">
+                                            <a href="goods.php?id=57"><img src="images/201508/thumb_img/57_thumb_G_1440717888680.jpg" alt="清水软胶保护套"></a>
+                                        </div>
+                                        <div class="title"><a href="goods.php?id=57">清水软胶保护套</a></div>
+                                        <p class="price">5<em>元</em>元</p>
+                                    </li>
+                                    <li class="first">
+                                        <div class="figure figure-thumb">
+                                            <a href="goods.php?id=87"><img src="images/201509/thumb_img/87_thumb_G_1441056303542.jpg" alt="普通高透贴膜(单片装)"></a>
+                                        </div>
+                                        <div class="title"><a href="goods.php?id=87">普通高透贴膜(单片装)</a></div>
+                                        <p class="price">10<em>元</em>元</p>
+                                    </li>
+                                    <li class="first">
+                                        <div class="figure figure-thumb">
+                                            <a href="goods.php?id=86"><img src="images/201509/thumb_img/86_thumb_G_1441056239670.jpg" alt="安卓防尘塞"></a>
+                                        </div>
+                                        <div class="title"><a href="goods.php?id=86">安卓防尘塞</a></div>
+                                        <p class="price">6<em>元</em>元</p>
+                                    </li>
+                                    <li class="first">
+                                        <div class="figure figure-thumb">
+                                            <a href="goods.php?id=84"><img src="images/201509/thumb_img/84_thumb_G_1441056023645.jpg" alt="插卡式翻盖保护套"></a>
+                                        </div>
+                                        <div class="title"><a href="goods.php?id=84">插卡式翻盖保护套</a></div>
+                                        <p class="price">29<em>元</em>元</p>
+                                    </li>
+                                    <li class="first">
+                                        <div class="figure figure-thumb">
+                                            <a href="goods.php?id=85"><img src="images/201509/thumb_img/85_thumb_G_1441056112107.jpg" alt="清水软胶保护套"></a>
+                                        </div>
+                                        <div class="title"><a href="goods.php?id=85">清水软胶保护套</a></div>
+                                        <p class="price">5<em>元</em>元</p>
+                                    </li>
+                                    <li class="first">
+                                        <div class="figure figure-thumb">
+                                            <a href="goods.php?id=88"><img src="images/201509/thumb_img/88_thumb_G_1441056484072.jpg" alt="米兔主题3D保护壳"></a>
+                                        </div>
+                                        <div class="title"><a href="goods.php?id=88">米兔主题3D保护壳</a></div>
+                                        <p class="price">39<em>元</em>元</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="link" href="category.php?id=118"><span>小米生活方式</span></a>
+                        <div class='item-children'>
+                            <div class="container">
+                                <ul class="children-list clearfix">
+                                    <li class="first">
+                                        <div class="figure figure-thumb">
+                                            <a href="goods.php?id=89"><img src="images/201509/thumb_img/89_thumb_G_1441056597778.jpg" alt="纯色开衫卫衣 女款"></a>
+                                        </div>
+                                        <div class="title"><a href="goods.php?id=89">纯色开衫卫衣 女款</a></div>
+                                        <p class="price">129<em>元</em>元</p>
+                                    </li>
+                                    <li class="first">
+                                        <div class="figure figure-thumb">
+                                            <a href="goods.php?id=90"><img src="images/201509/thumb_img/90_thumb_G_1441056659073.jpg" alt="企鹅版米兔"></a>
+                                        </div>
+                                        <div class="title"><a href="goods.php?id=90">企鹅版米兔</a></div>
+                                        <p class="price">49<em>元</em>元</p>
+                                    </li>
+                                    <li class="first">
+                                        <div class="figure figure-thumb">
+                                            <a href="goods.php?id=91"><img src="images/201509/thumb_img/91_thumb_G_1441056702928.jpg" alt="简约多功能双肩包"></a>
+                                        </div>
+                                        <div class="title"><a href="goods.php?id=91">简约多功能双肩包</a></div>
+                                        <p class="price">99<em>元</em>元</p>
+                                    </li>
+                                    <li class="first">
+                                        <div class="figure figure-thumb">
+                                            <a href="goods.php?id=92"><img src="images/201509/thumb_img/92_thumb_G_1441056728120.jpg" alt="小米鼠标垫"></a>
+                                        </div>
+                                        <div class="title"><a href="goods.php?id=92">小米鼠标垫</a></div>
+                                        <p class="price">5<em>元</em>元</p>
+                                    </li>
+                                    <li class="first">
+                                        <div class="figure figure-thumb">
+                                            <a href="goods.php?id=43"><img src="images/201507/thumb_img/43_thumb_G_1437091900155.jpg" alt="小蚁蓝牙自拍杆"></a>
+                                        </div>
+                                        <div class="title"><a href="goods.php?id=43">小蚁蓝牙自拍杆</a></div>
+                                        <p class="price">129<em>元</em>元</p>
+                                    </li>
+                                    <li class="first">
+                                        <div class="figure figure-thumb">
+                                            <a href="goods.php?id=94"><img src="images/201509/thumb_img/94_thumb_G_1441056891849.jpg" alt="猫的秘密"></a>
+                                        </div>
+                                        <div class="title"><a href="goods.php?id=94">猫的秘密</a></div>
+                                        <p class="price">199<em>元</em>元</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- <div class="container-user"> -->
+            <div class="topbar-cart" id="ECS_CARTINFO">
+                <a class="cart-mini " href="flow.php">
+                    <i class="iconfont">&#xe60c;</i> 购物车
+                    <span class="mini-cart-num J_cartNum" id="hd_cartnum">(0)</span>
+                </a>
+            </div>
+            <div class="topbar-info J_userInfo" id="ECS_MEMBERZONE">
+                <a class="link" href="user.php" rel="nofollow">登录</a>
+                <span class="sep">|</span>
+                <a class="link" href="user.php?act=register" rel="nofollow">注册</a>
+            </div>
+            <!-- </div> -->
         </div>
-      </div>
+        <div id="J_navMenu" class="header-nav-menu" style="display: none;">
+            <div class="container"></div>
+        </div>
     </div>
-  </div>
-</div>
-<footer class="footer">
+    <div class="nav-breadcrumb-wrap">
+        <div class="container">
+            <nav class="nav-breadcrumb">
+                <a href="/">Home</a>
+                <span>Goods</span>
+            </nav>
+        </div>
+    </div>
+    <div class="accessory-result-page accessory-page">
+        <div class="container">
+            <div class="filter-nav">
+                <span class="sortby">Sort by:</span>
+                <a href="javascript:void(0)" class="default cur">Default</a>
+                <a href="javascript:void(0)" class="price">Price <svg class="icon icon-arrow-short"><use xlink:href="#icon-arrow-short"></use></svg></a>
+                <a href="javascript:void(0)" class="filterby stopPop">Filter by</a>
+            </div>
+            <div class="accessory-result">
+                <!-- filter -->
+                <div class="filter stopPop" id="filter">
+                    <dl class="filter-price">
+                        <dt>Price:</dt>
+                        <dd><a href="javascript:void(0)">All</a></dd>
+                        <dd>
+                            <a href="javascript:void(0)">0 - 100</a>
+                        </dd>
+                        <dd>
+                            <a href="javascript:void(0)">100 - 500</a>
+                        </dd>
+                        <dd>
+                            <a href="javascript:void(0)">500 - 1000</a>
+                        </dd>
+                        <dd>
+                            <a href="javascript:void(0)">1000 - 2000</a>
+                        </dd>
+                    </dl>
+                </div>
+
+                <!-- search result accessories list -->
+                <div class="accessory-list-wrap">
+                    <div class="accessory-list col-4">
+                        <ul>
+                            <li>
+                                <div class="pic">
+                                    <a href="#"><img src="../img/1.jpg" alt=""></a>
+                                </div>
+                                <div class="main">
+                                    <div class="name">XX</div>
+                                    <div class="price">999</div>
+                                    <div class="btn-area">
+                                        <a href="javascript:;" class="btn btn--m">加入购物车</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="pic">
+                                    <a href="#"><img src="../img/2.jpg" alt=""></a>
+                                </div>
+                                <div class="main">
+                                    <div class="name">XX</div>
+                                    <div class="price">1000</div>
+                                    <div class="btn-area">
+                                        <a href="javascript:;" class="btn btn--m">加入购物车</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="pic">
+                                    <a href="#"><img src="../img/3.jpg" alt=""></a>
+                                </div>
+                                <div class="main">
+                                    <div class="name">XX</div>
+                                    <div class="price">500</div>
+                                    <div class="btn-area">
+                                        <a href="javascript:;" class="btn btn--m">加入购物车</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="pic">
+                                    <a href="#"><img src="../img/4.jpg" alt=""></a>
+                                </div>
+                                <div class="main">
+                                    <div class="name">XX</div>
+                                    <div class="price">2499</div>
+                                    <div class="btn-area">
+                                        <a href="javascript:;" class="btn btn--m">加入购物车</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <footer class="footer">
   <div class="footer__wrap">
     <div class="footer__secondary">
       <div class="footer__inner">
@@ -161,6 +420,147 @@
       </div>
     </div>
   </div>
-</footer>
+</footer> -->
+    <div class="site-footer">
+        <div class="container">
+            <div class="footer-service">
+                <!-- <ul class="list-service clearfix">
+                    <li>
+                        <a rel="nofollow" href="javascript:void(0)">
+                            <i class="iconfont"></i>1小时快修服务
+                        </a>
+                    </li>
+                    <li>
+                        <a rel="nofollow" href="javascript:void(0)">
+                            <i class="iconfont"></i>7天无理由退货
+                        </a>
+                    </li>
+                    <li>
+                        <a rel="nofollow" href="javascript:void(0)">
+                            <i class="iconfont"></i>15天免费换货
+                        </a>
+                    </li>
+                    <li>
+                        <a rel="nofollow" href="javascript:void(0)">
+                            <i class="iconfont"></i>满150元包邮
+                        </a>
+                    </li>
+                    <li>
+                        <a rel="nofollow" href="javascript:void(0)">
+                            <i class="iconfont"></i>520余家售后网点
+                        </a>
+                    </li>
+                </ul> -->
+            </div>
+            <div class="footer-links clearfix">
+                <div class="blank"></div>
+
+                <dl class="col-links">
+                    <dt>帮助中心</dt>
+                    <dd>
+                        <a href="article.php?id=9" target="_blank" title="配送方式" rel="nofollow">配送方式</a>
+                    </dd>
+                    <dd>
+                        <a href="article.php?id=10" target="_blank" title="支付方式" rel="nofollow">支付方式</a>
+                    </dd>
+                    <dd>
+                        <a href="article.php?id=11" target="_blank" title="购物指南" rel="nofollow">购物指南</a>
+                    </dd>
+
+                </dl>
+
+
+                <dl class="col-links">
+                    <dt>服务支持</dt>
+                    <dd>
+                        <a href="article.php?id=21" target="_blank" title="相关下载" rel="nofollow">相关下载</a>
+                    </dd>
+                    <dd>
+                        <a href="article.php?id=22" target="_blank" title="自助服务" rel="nofollow">自助服务</a>
+                    </dd>
+                    <dd>
+                        <a href="article.php?id=23" target="_blank" title="售后政策" rel="nofollow">售后政策</a>
+                    </dd>
+
+                </dl>
+
+
+                <dl class="col-links">
+                    <dt>小米之家</dt>
+                    <dd>
+                        <a href="article.php?id=12" target="_blank" title="预约亲临到店服务" rel="nofollow">预约亲临到店服务</a>
+                    </dd>
+                    <dd>
+                        <a href="article.php?id=13" target="_blank" title="服务网点" rel="nofollow">服务网点</a>
+                    </dd>
+                    <dd>
+                        <a href="article.php?id=14" target="_blank" title="小米之家" rel="nofollow">小米之家</a>
+                    </dd>
+
+                </dl>
+
+
+                <dl class="col-links">
+                    <dt>关于小米</dt>
+                    <dd>
+                        <a href="article.php?id=24" target="_blank" title="联系小米" rel="nofollow">联系小米</a>
+                    </dd>
+                    <dd>
+                        <a href="article.php?id=25" target="_blank" title="加入小米" rel="nofollow">加入小米</a>
+                    </dd>
+                    <dd>
+                        <a href="article.php?id=26" target="_blank" title="了解小米" rel="nofollow">了解小米</a>
+                    </dd>
+
+                </dl>
+
+
+                <dl class="col-links">
+                    <dt>关注小米</dt>
+                    <dd>
+                        <a href="article.php?id=15" target="_blank" title="官方微信" rel="nofollow">官方微信</a>
+                    </dd>
+                    <dd>
+                        <a href="article.php?id=16" target="_blank" title="小米部落" rel="nofollow">小米部落</a>
+                    </dd>
+                    <dd>
+                        <a href="article.php?id=17" target="_blank" title="新浪微博" rel="nofollow">新浪微博</a>
+                    </dd>
+
+                </dl>
+
+
+
+
+
+                <div class="col-contact">
+                    <p class="phone">400-023-3005</p>
+                    <p>周一至周日 8:00-18:00<br>（仅收市话费）</p>
+                    <a rel="nofollow" class="btn btn-line-primary btn-small">
+                        <i class="iconfont"></i> 24小时在线客服
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="site-info">
+        <div class="container">
+            <div class="logo ir">小米官网</div>
+            <div class="info-text">
+                <p class="sites">
+                </p>
+                <p>
+                    ©<a href='#'>mi.com</a> 京ICP证110507号 京ICP备10046444号 京公网安备1101080212535号 <a href='#'>京网文[2014]0059-0009号</a>
+                </p>
+            </div>
+            <div class="info-links">
+                <a href="#"><img src="http://s1.mi.com/zt/12052601/cnnicVerifyseal.png" alt="可信网站"></a>
+                <a href="#"><img src="http://s1.mi.com/zt/12052601/szfwVerifyseal.gif" alt="诚信网站"></a>
+                <a href="#"><img src="http://s1.mi.com/zt/12052601/save.jpg" alt="网上交易保障中心"></a>
+            </div>
+        </div>
+    </div>
+
 </body>
+
 </html>
