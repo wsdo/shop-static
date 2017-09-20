@@ -1,0 +1,528 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta name="Generator" content="ECSHOP v2.7.3" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="Keywords" content="" />
+    <meta name="Description" content="" />
+
+    <title>购物流程_小米官网——小米手机、红米手机、小米电视官方正品专卖网站 - Powered by ECShop</title>
+
+
+
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="icon" href="animated_favicon.gif" type="image/gif" />
+    <link href="../style.css" rel="stylesheet" type="text/css" />
+    <link href="../cart.css" rel="stylesheet" type="text/css" />
+
+
+</head>
+
+<body>
+
+    <div class="site-header site-mini-header">
+        <div class="container">
+            <div class="header-logo">
+                <a href="index.php" class="logo"><img src="../img/vn-logo.png" /></a>
+            </div>
+            <div class="header-title">
+                <h2>我的购物车<span id="selectedCount"></span></h2>
+            </div>
+            <div class="topbar-info J_userInfo">
+                <span class="user">
+	<a class="user-name" target="_blank" href="user.php"><span class="name">admin123</span><i class="iconfont"></i></a>
+                <!-- <ul class="user-menu">
+                    <li><a target="_blank" href="user.php">个人中心</a></li>
+                    <li><a target="_blank" href="user.php?act=collection_list">我的收藏</a></li>
+                    <li><a target="_blank" href="user.php?act=comment_list">我的评论</a></li>
+                    <li><a target="_blank" href="user.php?act=track_packages">跟踪包裹</a></li>
+                    <li><a href="user.php?act=logout">退出登录</a></li>
+                </ul> -->
+                </span>
+                <span class="sep">|</span> <a href="user.php?act=order_list" class="link">我的订单</a>
+
+
+
+            </div>
+        </div>
+    </div>
+    <!-- <script type="text/javascript" src="js/xiaomi_flow.js"></script> -->
+    <div class="page-main">
+        <div class="container clearfix">
+            <div class="checkout-box confirm-order-box">
+                <h2>确认订单信息页面</h2>
+                <div class="flowBox_in">
+                    <form action="flow.php" method="post" name="theForm" id="theForm" onsubmit="return checkOrderForm(this)">
+                        <script type="text/javascript">
+                            var flow_no_payment = "您必须选定一个支付方式。";
+                            var flow_no_shipping = "您必须选定一个配送方式。";
+                        </script>
+                        <ul class="box-main clearfix">
+                            <li class="section-options clearfix">
+                                <h3 class="section-header"><span>收货人信息</span></h3>
+                                <div class="section-body">
+                                    <div class="checkout-item active">刘先生 北京</div>
+                                    <span class="addr-name">刘先生</span>
+                                    <span class="addr-info">北京 北京 海淀区 海兴大厦</span>
+                                    <span class="addr-tel">010-25851234</span>
+                                    <a href="flow.php?step=consignee" class="modify">修改</a>
+                                </div>
+                            </li>
+                            <li class="section-options clearfix">
+                                <h3 class="section-header"><span>支付方式</span></h3>
+                                <div class="section-body">
+                                    <ul class="item-list clearfix payment-list" id="payment-list">
+
+                                        <li>
+                                            <label class="checkout-item" for="payment_1">快钱人民币网关</label>
+                                            <input type="radio" name="payment" class="radio" id="payment_1" value="5" isCod="0" onclick="selectPayment(this)" />
+                                            <div class="text">
+                                                <i></i>手续费：0.00<em>元</em> </div>
+                                        </li>
+
+                                        <li>
+                                            <label class="checkout-item" for="payment_2">余额支付</label>
+                                            <input type="radio" name="payment" class="radio" id="payment_2" value="1" isCod="0" onclick="selectPayment(this)" />
+                                            <div class="text">
+                                                <i></i>手续费：0.00<em>元</em> </div>
+                                        </li>
+
+                                        <li>
+                                            <label class="checkout-item" for="payment_3">银行汇款/转帐</label>
+                                            <input type="radio" name="payment" class="radio" id="payment_3" value="2" isCod="0" onclick="selectPayment(this)" />
+                                            <div class="text">
+                                                <i></i>手续费：0.00<em>元</em> </div>
+                                        </li>
+
+                                        <li>
+                                            <label class="checkout-item" for="payment_4">货到付款</label>
+                                            <input type="radio" name="payment" class="radio" id="payment_4" value="3" isCod="1" onclick="selectPayment(this)" disabled="true" />
+                                            <div class="text">
+                                                <i></i>手续费：<span id="ECS_CODFEE">0.00<em>元</em></span> </div>
+                                        </li>
+
+                                        <li>
+                                            <label class="checkout-item" for="payment_5">网银在线</label>
+                                            <input type="radio" name="payment" class="radio" id="payment_5" value="4" isCod="0" onclick="selectPayment(this)" />
+                                            <div class="text">
+                                                <i></i>手续费：1% </div>
+                                        </li>
+
+                                        <li>
+                                            <label class="checkout-item" for="payment_6">支付宝</label>
+                                            <input type="radio" name="payment" class="radio" id="payment_6" value="6" checked isCod="0" onclick="selectPayment(this)" />
+                                            <div class="text">
+                                                <i></i>手续费：0.00<em>元</em> </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="section-options clearfix section-shipping">
+                                <h3 class="section-header"><span>配送方式</span></h3>
+                                <div class="section-body">
+                                    <ul class="item-list clearfix payment-list" id="shipping-list">
+                                        <li>
+                                            <label class="checkout-item" for="ECS_NEEDINSURE_1">申通快递</label>
+                                            <input name="shipping" type="radio" id="ECS_NEEDINSURE_1" value="5" supportCod="0" insure="0" class="radio" onclick="selectShipping(this)" />
+                                            <div class="text">
+                                                <i></i>费用：15.00<em>元</em>&nbsp;&nbsp;免费额度：0.00<em>元</em> </div>
+                                        </li>
+                                        <li>
+                                            <label class="checkout-item" for="ECS_NEEDINSURE_2">城际快递</label>
+                                            <input name="shipping" type="radio" id="ECS_NEEDINSURE_2" value="3" supportCod="1" insure="0" class="radio" onclick="selectShipping(this)" />
+                                            <div class="text">
+                                                <i></i>费用：10.00<em>元</em>&nbsp;&nbsp;免费额度：100000.00<em>元</em> </div>
+                                        </li>
+                                        <li>
+                                            <label class="checkout-item" for="ECS_NEEDINSURE_3">邮局平邮</label>
+                                            <input name="shipping" type="radio" id="ECS_NEEDINSURE_3" value="6" supportCod="0" insure="0" class="radio" onclick="selectShipping(this)" />
+                                            <div class="text">
+                                                <i></i>费用：3.50<em>元</em>&nbsp;&nbsp;免费额度：50000.00<em>元</em> </div>
+                                        </li>
+                                        <li>
+                                            <label class="checkout-item" for="ECS_NEEDINSURE_4">中通速递</label>
+                                            <input name="shipping" type="radio" id="ECS_NEEDINSURE_4" value="10" supportCod="0" insure="1%" class="radio" onclick="selectShipping(this)" />
+                                            <div class="text">
+                                                <i></i>费用：10.00<em>元</em>&nbsp;&nbsp;免费额度：0.00<em>元</em> </div>
+                                        </li>
+                                    </ul>
+                                    <div style="margin-top:20px;">
+                                        <label for="ECS_NEEDINSURE">
+                    <input name="need_insure" id="ECS_NEEDINSURE" type="checkbox"  onclick="selectInsure(this.checked)" value="1"  disabled="true"  />
+                    配送是否需要保价 
+                    </label>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="section-options clearfix section-goods">
+                                <div class="section-header clearfix">
+                                    <h3 class="title">商品列表</h3>
+                                    <a href="flow.php" class="modify">返回购物车<i class="iconfont"></i></a> </div>
+                                <table width="100%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd" class="goods-list-table">
+                                    <tr>
+                                        <td bgcolor="#ffffff">
+                                            <img src="../images/201507/31_thumb_G_1437075539254.jpg" title="小米移动电源10000mAh" width="30" height="30" />
+
+                                            <a href="goods.php?id=31" target="_blank" class="f6">小米移动电源10000mAh&nbsp;</a>
+
+
+                                        </td>
+                                        <td bgcolor="#ffffff" align="center">79.00<em>元</em>&nbsp;x&nbsp;2</td>
+                                        <td bgcolor="#ffffff" align="center"><span style="color:#ff6700;">158.00<em>元</em></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td bgcolor="#ffffff">
+                                            <img src="../images/201507/27_thumb_G_1437074702008.jpg" title="小米电视2 40英寸" width="30" height="30" />
+
+                                            <a href="goods.php?id=27" target="_blank" class="f6">小米电视2 40英寸&nbsp;尺寸:45 
+颜色:黄[100] 
+</a>
+
+
+                                        </td>
+                                        <td bgcolor="#ffffff" align="center">2300.00<em>元</em>&nbsp;x&nbsp;1</td>
+                                        <td bgcolor="#ffffff" align="center"><span style="color:#ff6700;">2300.00<em>元</em></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td bgcolor="#ffffff">
+                                            <img src="../images/201507/45_thumb_G_1437092199733.jpg" title="小米活塞耳机标准版" width="30" height="30" />
+
+                                            <a href="goods.php?id=45" target="_blank" class="f6">小米活塞耳机标准版&nbsp;</a>
+
+
+                                        </td>
+                                        <td bgcolor="#ffffff" align="center">89.00<em>元</em>&nbsp;x&nbsp;1</td>
+                                        <td bgcolor="#ffffff" align="center"><span style="color:#ff6700;">89.00<em>元</em></span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td bgcolor="#ffffff" colspan="7">
+                                            购物金额小计 2547.00<em>元</em>，比市场价 3034.80<em>元</em> 节省了 487.80<em>元</em> (16%)</td>
+                                    </tr>
+                                </table>
+                            </li>
+
+
+                            <li class="section-options clearfix section-goods">
+                                <h3 class="section-header"><span>祝福贺卡</span></h3>
+                                <table width="100%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd" id="cardTable" class="goods-list-table">
+                                    <tr>
+                                        <th bgcolor="#ffffff" width="5%" scope="col">&nbsp;</th>
+                                        <th bgcolor="#ffffff" width="35%" scope="col">名称</th>
+                                        <th bgcolor="#ffffff" width="22%" scope="col" align="center">价格</th>
+                                        <th bgcolor="#ffffff" width="22%" scope="col" align="center">免费额度</th>
+                                        <th bgcolor="#ffffff" scope="col" align="center">图片</th>
+                                    </tr>
+                                    <tr>
+                                        <td bgcolor="#ffffff" valign="top"><input type="radio" name="card" value="0" checked="true" onclick="selectCard(this)" /></td>
+                                        <td bgcolor="#ffffff" valign="top"><strong>不要贺卡</strong></td>
+                                        <td bgcolor="#ffffff" valign="top" align="center">&nbsp;</td>
+                                        <td bgcolor="#ffffff" valign="top" align="center">&nbsp;</td>
+                                        <td bgcolor="#ffffff" valign="top" align="center">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" bgcolor="#ffffff"><input type="radio" name="card" value="1" onclick="selectCard(this)" /></td>
+                                        <td valign="top" bgcolor="#ffffff"><strong>祝福贺卡</strong></td>
+                                        <td valign="top" align="center" bgcolor="#ffffff">5.00<em>元</em></td>
+                                        <td valign="top" align="center" bgcolor="#ffffff">1000.00<em>元</em></td>
+                                        <td valign="top" align="center" bgcolor="#ffffff">
+                                            <a href="../data/cardimg/1242108754847457261.jpg" target="_blank" class="f6">查看</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td bgcolor="#ffffff"></td>
+                                        <td bgcolor="#ffffff" valign="top" colspan="4">
+                                            <strong>祝福语:</strong>
+                                            <textarea class="card_message" name="card_message" cols="80" rows="4" style="width:auto; border:1px solid #ccc;"></textarea>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </li>
+
+                            <li class="section-options clearfix">
+                                <h3 class="section-header">其它信息</h3>
+                            </li>
+
+
+                            <li class="section-options clearfix">
+                                <h3 class="section-header">使用红包</h3>
+                                <div class="section-body">
+                                    <span class="item">
+            	选择已有红包 
+                  <select name="bonus" onchange="changeBonus(this.value)" id="ECS_BONUS" style="border:1px solid #ccc;">
+                    <option value="0" selected>请选择</option>
+                                      </select>
+                  </span>
+                                    <span class="item">
+                  或者输入红包序列号 
+                  <input name="bonus_sn" type="text" class="inputBg" size="15" value="" />
+                  </span>
+                                    <span class="item">
+                  <input name="validate_bonus" type="button" class="bnt_blue_1" value="验证红包" onclick="validateBonus(document.forms['theForm'].elements['bonus_sn'].value)" style="vertical-align:middle;" />
+                  </span>
+                                </div>
+                            </li>
+
+                            <li class="section-options clearfix">
+                                <h3 class="section-header">开发票&nbsp;<input name="need_inv" type="checkbox" class="input" id="ECS_NEEDINV" onclick="changeNeedInv()" value="1" /></h3>
+                                <div class="section-body">
+
+                                    <span class="item">
+                  发票类型 
+                  <select name="inv_type" id="ECS_INVTYPE" disabled="true" onchange="changeNeedInv()" style="border:1px solid #ccc;">
+                   <option value="1">1 [1%]</option><option value="2">2 [1.5%]</option><option value="3">3 [0%]</option>                  </select>
+                  </span>
+                                    <span class="item"> 
+                  发票抬头 
+                  <input name="inv_payee" type="text"  class="input" id="ECS_INVPAYEE" size="20" disabled="true" value="" onblur="changeNeedInv()" />
+                  </span>
+                                    <span class="item">
+                  发票内容 
+                  <select name="inv_content" id="ECS_INVCONTENT" disabled="true"  onchange="changeNeedInv()" style="border:1px solid #ccc;">
+                  <option value="办公用品">办公用品</option><option value="食品">食品</option><option value="礼品">礼品</option><option value="服装">服装</option>  				  </select>
+                  </span>
+                                </div>
+                            </li>
+
+                            <li class="section-options clearfix">
+                                <h3 class="section-header">订单附言</h3>
+                                <div class="section-body">
+                                    <textarea name="postscript" cols="80" rows="3" id="postscript" style="border:1px solid #ccc;"></textarea>
+                                </div>
+                            </li>
+
+                            <li class="section-options clearfix">
+                                <h3 class="section-header">缺货处理</h3>
+                                <div class="section-body">
+                                    <ul class="item-list clearfix" id="quehuo-list">
+                                        <li>
+                                            <label class="checkout-item" for="how_oos_0" onclick="javascript:void(0);">等待所有商品备齐后再发</label>
+                                            <input name="how_oos" id="how_oos_0" type="radio" value="0" class="radio" checked onclick="changeOOS(this)" />
+                                        </li>
+                                        <li>
+                                            <label class="checkout-item" for="how_oos_1" onclick="javascript:void(0);">取消订单</label>
+                                            <input name="how_oos" id="how_oos_1" type="radio" value="1" class="radio" onclick="changeOOS(this)" />
+                                        </li>
+                                        <li>
+                                            <label class="checkout-item" for="how_oos_2" onclick="javascript:void(0);">与店主协商</label>
+                                            <input name="how_oos" id="how_oos_2" type="radio" value="2" class="radio" onclick="changeOOS(this)" />
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="section-options clearfix section-count">
+                                <!--<h3 class="section-header"><span>费用总计</span></h3>-->
+                                <div id="ECS_ORDERTOTAL" class="money-box">
+                                    <ul>
+                                        <li class="clearfix">
+                                            <label>订购即送：</label>
+                                            <span class="val"> 
+            <font class="f4_b">2547</font> 积分            ，以及价值               <font class="f4_b">0.00<em>元</em></font>的红包。
+          
+    </span>
+                                        </li>
+                                        <li class="clearfix">
+                                            <label>商品总价：</label><span class="val">2547.00<em>元</em></span>
+                                        </li>
+                                        <li class="clearfix total-price">
+                                            <label>应付款金额：</label> <span class="val"><em>2547.00<em>元</em></em></span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="section-options clearfix" style="border-bottom:none;">
+                                <div style="margin:8px auto; text-align:right;">
+                                    <input type="image" src="../img/bnt_subOrder.gif" />
+                                    <input type="hidden" name="step" value="done" />
+                                </div>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="site-footer">
+        <div class="container">
+            <div class="footer-service">
+                <ul class="list-service clearfix">
+                    <li>
+                        <a rel="nofollow" href="javascript:void(0)">
+                            <i class="iconfont"></i>1小时快修服务
+                        </a>
+                    </li>
+                    <li>
+                        <a rel="nofollow" href="javascript:void(0)">
+                            <i class="iconfont"></i>7天无理由退货
+                        </a>
+                    </li>
+                    <li>
+                        <a rel="nofollow" href="javascript:void(0)">
+                            <i class="iconfont"></i>15天免费换货
+                        </a>
+                    </li>
+                    <li>
+                        <a rel="nofollow" href="javascript:void(0)">
+                            <i class="iconfont"></i>满150元包邮
+                        </a>
+                    </li>
+                    <li>
+                        <a rel="nofollow" href="javascript:void(0)">
+                            <i class="iconfont"></i>520余家售后网点
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-links clearfix">
+                <div class="blank"></div>
+
+                <dl class="col-links">
+                    <dt>帮助中心</dt>
+                    <dd>
+                        <a href="article.php?id=9" target="_blank" title="配送方式" rel="nofollow">配送方式</a>
+                    </dd>
+                    <dd>
+                        <a href="article.php?id=10" target="_blank" title="支付方式" rel="nofollow">支付方式</a>
+                    </dd>
+                    <dd>
+                        <a href="article.php?id=11" target="_blank" title="购物指南" rel="nofollow">购物指南</a>
+                    </dd>
+
+                </dl>
+
+
+                <dl class="col-links">
+                    <dt>服务支持</dt>
+                    <dd>
+                        <a href="article.php?id=21" target="_blank" title="相关下载" rel="nofollow">相关下载</a>
+                    </dd>
+                    <dd>
+                        <a href="article.php?id=22" target="_blank" title="自助服务" rel="nofollow">自助服务</a>
+                    </dd>
+                    <dd>
+                        <a href="article.php?id=23" target="_blank" title="售后政策" rel="nofollow">售后政策</a>
+                    </dd>
+
+                </dl>
+
+
+                <dl class="col-links">
+                    <dt>格美之家</dt>
+                    <dd>
+                        <a href="article.php?id=12" target="_blank" title="预约亲临到店服务" rel="nofollow">预约亲临到店服务</a>
+                    </dd>
+                    <dd>
+                        <a href="article.php?id=13" target="_blank" title="服务网点" rel="nofollow">服务网点</a>
+                    </dd>
+                    <dd>
+                        <a href="article.php?id=14" target="_blank" title="格美之家" rel="nofollow">格美之家</a>
+                    </dd>
+
+                </dl>
+
+
+                <dl class="col-links">
+                    <dt>关于格美</dt>
+                    <dd>
+                        <a href="article.php?id=24" target="_blank" title="联系格美" rel="nofollow">联系格美</a>
+                    </dd>
+                    <dd>
+                        <a href="article.php?id=25" target="_blank" title="加入格美" rel="nofollow">加入格美</a>
+                    </dd>
+                    <dd>
+                        <a href="article.php?id=26" target="_blank" title="了解格美" rel="nofollow">了解格美</a>
+                    </dd>
+
+                </dl>
+
+
+                <dl class="col-links">
+                    <dt>关注格美</dt>
+                    <dd>
+                        <a href="article.php?id=15" target="_blank" title="官方微信" rel="nofollow">官方微信</a>
+                    </dd>
+                    <dd>
+                        <a href="article.php?id=16" target="_blank" title="格美部落" rel="nofollow">格美部落</a>
+                    </dd>
+                    <dd>
+                        <a href="article.php?id=17" target="_blank" title="新浪微博" rel="nofollow">新浪微博</a>
+                    </dd>
+
+                </dl>
+
+
+
+
+
+
+                <div class="col-contact">
+                    <p class="phone">535-789-859</p>
+                    <p>周一至周日 8:00-18:00<br>（投诉QQ）</p>
+                    <a rel="nofollow" class="btn btn-line-primary btn-small">
+                        <i class="iconfont"></i> 24小时在线客服
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="site-info">
+        <div class="container">
+            <div class="logo ir">格美官网</div>
+            <div class="info-text">
+                <p class="sites">
+                </p>
+                <p>
+                    ©<a href='#'>vnshop.cn</a> 京ICP证110507号 京ICP备10046444号 京公网安备1101080212535号 <a href='#'>京网文[2014]0059-0009号</a>
+                </p>
+            </div>
+            <div class="info-links">
+                <a href="#"><img src="http://s1.mi.com/zt/12052601/cnnicVerifyseal.png" alt="可信网站"></a>
+                <a href="#"><img src="http://s1.mi.com/zt/12052601/szfwVerifyseal.gif" alt="诚信网站"></a>
+                <a href="#"><img src="http://s1.mi.com/zt/12052601/save.jpg" alt="网上交易保障中心"></a>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var process_request = "正在处理您的请求...";
+        var username_empty = "用户名不能为空。";
+        var username_shorter = "用户名长度不能少于 3 个字符。";
+        var username_invalid = "用户名只能是由字母数字以及下划线组成。";
+        var password_empty = "登录密码不能为空。";
+        var password_shorter = "登录密码不能少于 6 个字符。";
+        var confirm_password_invalid = "两次输入密码不一致";
+        var email_empty = "Email 为空";
+        var email_invalid = "Email 不是合法的地址";
+        var agreement = "您没有接受协议";
+        var msn_invalid = "msn地址不是一个有效的邮件地址";
+        var qq_invalid = "QQ号码不是一个有效的号码";
+        var home_phone_invalid = "家庭电话不是一个有效号码";
+        var office_phone_invalid = "办公电话不是一个有效号码";
+        var mobile_phone_invalid = "手机号码不是一个有效号码";
+        var msg_un_blank = "用户名不能为空";
+        var msg_un_length = "用户名最长不得超过7个汉字";
+        var msg_un_format = "用户名含有非法字符";
+        var msg_un_registered = "用户名已经存在,请重新输入";
+        var msg_can_rg = "可以注册";
+        var msg_email_blank = "邮件地址不能为空";
+        var msg_email_registered = "邮箱已存在,请重新输入";
+        var msg_email_format = "邮件地址不合法";
+        var msg_blank = "不能为空";
+        var no_select_question = "您没有完成密码提示问题的操作";
+        var passwd_balnk = "- 密码中不能包含空格";
+        var username_exist = "用户名 %s 已经存在";
+        var compare_no_goods = "您没有选定任何需要比较的商品或者比较的商品数少于 2 个。";
+        var btn_buy = "购买";
+        var is_cancel = "取消";
+        var select_spe = "请选择商品属性";
+    </script>
+</body>
+
+</html>

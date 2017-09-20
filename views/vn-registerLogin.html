@@ -1,0 +1,389 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta name="Generator" content="ECSHOP v2.7.3" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="Keywords" content="" />
+    <meta name="Description" content="" />
+
+    <title>购物流程_格美官网——米系列专卖网站 - Powered by ECShop</title>
+
+
+
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="icon" href="animated_favicon.gif" type="image/gif" />
+    <link href="../style.css" rel="stylesheet" type="text/css" />
+    <link href="../cart.css" rel="stylesheet" type="text/css" />
+
+    <!-- <script type="text/javascript" src="js/common.js"></script><script type="text/javascript" src="js/shopping_flow.js"></script> -->
+</head>
+
+<body>
+    <div class="site-header site-mini-header">
+        <div class="container">
+            <div class="header-logo">
+                <a href="index.php" class="logo"><img src="../img/vn-logo.png" /></a>
+            </div>
+            <div class="header-title">
+                <h2>我的购物车<span id="selectedCount"></span></h2>
+            </div>
+            <div class="topbar-info J_userInfo">
+                <a class="link" href="user.php" rel="nofollow">登录</a>
+                <span class="sep">|</span>
+                <a class="link" href="user.php?act=register" rel="nofollow">注册</a>
+
+
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var username_not_null = "请您输入用户名。";
+        var username_invalid = "您输入了一个无效的用户名。";
+        var password_not_null = "请您输入密码。";
+        var email_not_null = "请您输入电子邮件。";
+        var email_invalid = "您输入的电子邮件不正确。";
+        var password_not_same = "您输入的密码和确认密码不一致。";
+        var password_lt_six = "密码不能小于6个字符。";
+        $(function() {
+            $(".input_box").click(function() {
+                $(this).find(".t_text").hide();
+                $(this).find("input").focus();
+            })
+
+            $(".input_box").focusin(function() {
+                $(this).find(".t_text").hide();
+            })
+
+            $(".input_box").focusout(function() {
+                if ($(this).find("input").val() == "") {
+                    $(this).find(".t_text").show();
+                }
+            })
+        })
+
+
+        function checkLoginForm(frm) {
+            if (Utils.isEmpty(frm.elements['username'].value)) {
+                alert(username_not_null);
+                return false;
+            }
+
+            if (Utils.isEmpty(frm.elements['password'].value)) {
+                alert(password_not_null);
+                return false;
+            }
+
+            return true;
+        }
+
+        function checkSignupForm(frm) {
+            if (Utils.isEmpty(frm.elements['username'].value)) {
+                alert(username_not_null);
+                return false;
+            }
+
+            if (Utils.trim(frm.elements['username'].value).match(/^\s*$|^c:\\con\\con$|[%,\'\*\"\s\t\<\>\&\\]/)) {
+                alert(username_invalid);
+                return false;
+            }
+
+            if (Utils.isEmpty(frm.elements['email'].value)) {
+                alert(email_not_null);
+                return false;
+            }
+
+            if (!Utils.isEmail(frm.elements['email'].value)) {
+                alert(email_invalid);
+                return false;
+            }
+
+            if (Utils.isEmpty(frm.elements['password'].value)) {
+                alert(password_not_null);
+                return false;
+            }
+
+            if (frm.elements['password'].value.length < 6) {
+                alert(password_lt_six);
+                return false;
+            }
+
+            if (frm.elements['password'].value != frm.elements['confirm_password'].value) {
+                alert(password_not_same);
+                return false;
+            }
+            return true;
+        }
+    </script>
+
+
+    <div class="form-wrap container clearfix">
+        <div class="form-box fl" id="login-box">
+            <div class="form-hd clearfix">
+                <div class="trig">没有帐号？<a href="user.php?act=register" class="trigger-box">点击注册</a></div>
+                <h2>登录</h2>
+            </div>
+            <div class="form-bd" style="height:auto;">
+                <form action="flow.php?step=login" method="post" name="loginForm" id="loginForm" onsubmit="return checkLoginForm(this)">
+                    <ul class="form-list clearfix">
+                        <li class="text_input"><span class="error_icon"></span><span class="icon icon-user"></span>
+                            <input name="username" type="text" class="text" placeholder="用户名" />
+                        </li>
+                        <li class="text_input"><span class="error_icon"></span><span class="icon icon-pwd"></span>
+                            <input name="password" type="password" class="text" placeholder="密码" />
+                        </li>
+                        <li class="security_code input_box"> <span class="t_text">验证码</span>
+                            <input type="text" class="code_input" name="captcha" maxlength="6">
+                            <span class="error_icon"></span> <img src="captcha.php?is_login=1&1176989653" alt="captcha" style="vertical-align: middle;cursor: pointer;" onClick="this.src='captcha.php?is_login=1&'+Math.random()" /></li>
+                        <div class="blank" style="height:20px;"> </div>
+
+                        <li class="login_param">
+                            <p><a class="forget_psd" href="user.php?act=get_password">忘记密码?</a>
+                                <label>
+                      <input type="checkbox" value="1" name="remember" id="remember" class="remember-me">
+                      请保存我这次的登录信息。</label>
+                            </p>
+                        </li>
+                        <li class="last" style="margin-bottom:0;">
+                            <input type="submit" name="submit" class="btn" value="登 录">
+                            <input name="act" type="hidden" value="signin" />
+                        </li>
+                        <li class="last">
+
+                            <input type="button" class="btn" value="不打算登录，直接购买" onclick="location.href='flow.php?step=consignee&amp;direct_shopping=1'" />
+
+
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+        <div class="form-box fr">
+            <div id="register_box">
+                <form action="flow.php?step=login" method="post" name="formUser" id="registerForm" onsubmit="return checkSignupForm(this)">
+                    <h2>
+                        <div class="trig">已有账号? <a href="user.php" class="trigger-box">点击登录</a> </div>
+                        注册 </h2>
+                    <div class="register_infor">
+                        <input type="hidden" id="sendtype">
+                        <ul>
+                            <li class="input_box"> <span class="t_text">用户名</span>
+                                <input type="text" name="username" id="username" onblur="is_registered(this.value);" onkeyup="is_registered(this.value);">
+                                <span class="error_icon"></span> </li>
+                            <li class="error_box" id="username_notice"> <em></em> </li>
+                            <li class="input_box"> <span class="t_text">email</span>
+                                <input name="email" type="text" id="email" onblur="checkEmail(this.value);" onkeyup="checkEmail(this.value);">
+                                <span class="error_icon"></span> </li>
+                            <li class="error_box" id="email_notice"><em></em> </li>
+                            <li class="input_box"> <span class="t_text">密码</span>
+                                <input type="password" name="password" id="password1" onblur="check_password(this.value);" onkeyup="check_password(this.value);checkIntensity(this.value);">
+                                <span class="error_icon"></span> </li>
+                            <li class="error_box" id="password_notice"> <em></em> </li>
+                            <li class="input_box"> <span class="t_text">确认密码</span>
+                                <input name="confirm_password" type="password" id="conform_password" onblur="check_conform_password(this.value);" onkeyup="check_conform_password(this.value);">
+                                <span class="error_icon"></span> </li>
+                            <li class="error_box" id="conform_password_notice"> <em></em> </li>
+
+
+
+                            <li class="security_code input_box"> <span class="t_text">验证码</span>
+                                <input type="text" class="code_input" name="captcha" maxlength="6">
+                                <span class="error_icon"></span> <img src="captcha.php?1176989653" /> </li>
+                            <li class="error_box"> <em></em> </li>
+                            <li class="lizi_law">
+                                <label>
+                <input name="agreement" type="checkbox" value="1" checked="checked"  tabindex="5" class="remember-me"/>
+                我已看过并接受《<a href="article.php?cat_id=-1" style="color:blue" target="_blank">用户协议</a>》</label>
+                            </li>
+                            <li class="error_box"> <em></em> </li>
+                            <li class="go2register">
+                                <input type="submit" name="Submit" class="btn submit_btn" value="注册新用户" />
+                                <input name="act" type="hidden" value="signup" />
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="site-footer">
+        <div class="container">
+            <div class="footer-service">
+                <ul class="list-service clearfix">
+                    <li>
+                        <a rel="nofollow" href="javascript:void(0)">
+                            <i class="iconfont"></i>1小时快修服务
+                        </a>
+                    </li>
+                    <li>
+                        <a rel="nofollow" href="javascript:void(0)">
+                            <i class="iconfont"></i>7天无理由退货
+                        </a>
+                    </li>
+                    <li>
+                        <a rel="nofollow" href="javascript:void(0)">
+                            <i class="iconfont"></i>15天免费换货
+                        </a>
+                    </li>
+                    <li>
+                        <a rel="nofollow" href="javascript:void(0)">
+                            <i class="iconfont"></i>满150元包邮
+                        </a>
+                    </li>
+                    <li>
+                        <a rel="nofollow" href="javascript:void(0)">
+                            <i class="iconfont"></i>520余家售后网点
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-links clearfix">
+                <div class="blank"></div>
+
+                <dl class="col-links">
+                    <dt>帮助中心</dt>
+                    <dd>
+                        <a href="article.php?id=9" target="_blank" title="配送方式" rel="nofollow">配送方式</a>
+                    </dd>
+                    <dd>
+                        <a href="article.php?id=10" target="_blank" title="支付方式" rel="nofollow">支付方式</a>
+                    </dd>
+                    <dd>
+                        <a href="article.php?id=11" target="_blank" title="购物指南" rel="nofollow">购物指南</a>
+                    </dd>
+
+                </dl>
+
+
+                <dl class="col-links">
+                    <dt>服务支持</dt>
+                    <dd>
+                        <a href="article.php?id=21" target="_blank" title="相关下载" rel="nofollow">相关下载</a>
+                    </dd>
+                    <dd>
+                        <a href="article.php?id=22" target="_blank" title="自助服务" rel="nofollow">自助服务</a>
+                    </dd>
+                    <dd>
+                        <a href="article.php?id=23" target="_blank" title="售后政策" rel="nofollow">售后政策</a>
+                    </dd>
+
+                </dl>
+
+
+                <dl class="col-links">
+                    <dt>格美之家</dt>
+                    <dd>
+                        <a href="article.php?id=12" target="_blank" title="预约亲临到店服务" rel="nofollow">预约亲临到店服务</a>
+                    </dd>
+                    <dd>
+                        <a href="article.php?id=13" target="_blank" title="服务网点" rel="nofollow">服务网点</a>
+                    </dd>
+                    <dd>
+                        <a href="article.php?id=14" target="_blank" title="格美之家" rel="nofollow">格美之家</a>
+                    </dd>
+
+                </dl>
+
+
+                <dl class="col-links">
+                    <dt>关于格美</dt>
+                    <dd>
+                        <a href="article.php?id=24" target="_blank" title="联系格美" rel="nofollow">联系格美</a>
+                    </dd>
+                    <dd>
+                        <a href="article.php?id=25" target="_blank" title="加入格美" rel="nofollow">加入格美</a>
+                    </dd>
+                    <dd>
+                        <a href="article.php?id=26" target="_blank" title="了解格美" rel="nofollow">了解格美</a>
+                    </dd>
+
+                </dl>
+
+
+                <dl class="col-links">
+                    <dt>关注格美</dt>
+                    <dd>
+                        <a href="article.php?id=15" target="_blank" title="官方微信" rel="nofollow">官方微信</a>
+                    </dd>
+                    <dd>
+                        <a href="article.php?id=16" target="_blank" title="格美部落" rel="nofollow">格美部落</a>
+                    </dd>
+                    <dd>
+                        <a href="article.php?id=17" target="_blank" title="新浪微博" rel="nofollow">新浪微博</a>
+                    </dd>
+
+                </dl>
+
+
+
+
+
+
+                <div class="col-contact">
+                    <p class="phone">535-789-859</p>
+                    <p>周一至周日 8:00-18:00<br>（投诉QQ）</p>
+                    <a rel="nofollow" class="btn btn-line-primary btn-small">
+                        <i class="iconfont"></i> 24小时在线客服
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="site-info">
+        <div class="container">
+            <div class="logo ir">格美官网</div>
+            <div class="info-text">
+                <p class="sites">
+                </p>
+                <p>
+                    ©<a href='#'>vnshop.cn</a> 京ICP证110507号 京ICP备10046444号 京公网安备1101080212535号 <a href='#'>京网文[2014]0059-0009号</a>
+                </p>
+            </div>
+            <div class="info-links">
+                <a href="#"><img src="http://s1.mi.com/zt/12052601/cnnicVerifyseal.png" alt="可信网站"></a>
+                <a href="#"><img src="http://s1.mi.com/zt/12052601/szfwVerifyseal.gif" alt="诚信网站"></a>
+                <a href="#"><img src="http://s1.mi.com/zt/12052601/save.jpg" alt="网上交易保障中心"></a>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var process_request = "正在处理您的请求...";
+        var username_empty = "用户名不能为空。";
+        var username_shorter = "用户名长度不能少于 3 个字符。";
+        var username_invalid = "用户名只能是由字母数字以及下划线组成。";
+        var password_empty = "登录密码不能为空。";
+        var password_shorter = "登录密码不能少于 6 个字符。";
+        var confirm_password_invalid = "两次输入密码不一致";
+        var email_empty = "Email 为空";
+        var email_invalid = "Email 不是合法的地址";
+        var agreement = "您没有接受协议";
+        var msn_invalid = "msn地址不是一个有效的邮件地址";
+        var qq_invalid = "QQ号码不是一个有效的号码";
+        var home_phone_invalid = "家庭电话不是一个有效号码";
+        var office_phone_invalid = "办公电话不是一个有效号码";
+        var mobile_phone_invalid = "手机号码不是一个有效号码";
+        var msg_un_blank = "用户名不能为空";
+        var msg_un_length = "用户名最长不得超过7个汉字";
+        var msg_un_format = "用户名含有非法字符";
+        var msg_un_registered = "用户名已经存在,请重新输入";
+        var msg_can_rg = "可以注册";
+        var msg_email_blank = "邮件地址不能为空";
+        var msg_email_registered = "邮箱已存在,请重新输入";
+        var msg_email_format = "邮件地址不合法";
+        var msg_blank = "不能为空";
+        var no_select_question = "您没有完成密码提示问题的操作";
+        var passwd_balnk = "- 密码中不能包含空格";
+        var username_exist = "用户名 %s 已经存在";
+        var compare_no_goods = "您没有选定任何需要比较的商品或者比较的商品数少于 2 个。";
+        var btn_buy = "购买";
+        var is_cancel = "取消";
+        var select_spe = "请选择商品属性";
+    </script>
+</body>
+
+</html>

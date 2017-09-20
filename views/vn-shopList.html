@@ -1,0 +1,611 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta name="Generator" content="ECSHOP v2.7.3" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="Keywords" content="" />
+    <meta name="Description" content="" />
+    <title>购物流程_小米官网——小米手机、红米手机、小米电视官方正品专卖网站 - Powered by ECShop</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="icon" href="animated_favicon.gif" type="image/gif" />
+    <link href="../style.css" rel="stylesheet" type="text/css" />
+    <link href="../cart.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="site-header site-mini-header">
+        <div class="container">
+            <div class="header-logo">
+                <a href="index.php" class="logo"><img src="../img/vn-logo.png" /></a>
+            </div>
+            <div class="header-title">
+                <h2>我的购物车<span id="selectedCount">4</span></h2>
+            </div>
+            <div class="topbar-info J_userInfo">
+                <span class="user">
+	<a class="user-name" target="_blank" href="user.php"><span class="name">admin123</span><i class="iconfont"></i></a>
+                <!-- <ul class="user-menu">
+                    <li><a target="_blank" href="user.php">个人中心</a></li>
+                    <li><a target="_blank" href="user.php?act=collection_list">我的收藏</a></li>
+                    <li><a target="_blank" href="user.php?act=comment_list">我的评论</a></li>
+                    <li><a target="_blank" href="user.php?act=track_packages">跟踪包裹</a></li>
+                    <li><a href="user.php?act=logout">退出登录</a></li>
+                </ul> -->
+                </span>
+                <span class="sep">|</span> <a href="user.php?act=order_list" class="link">我的订单</a>
+
+
+
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var user_name_empty = "请输入您的用户名！";
+        var email_address_empty = "请输入您的电子邮件地址！";
+        var email_address_error = "您输入的电子邮件地址格式不正确！";
+        var new_password_empty = "请输入您的新密码！";
+        var confirm_password_empty = "请输入您的确认密码！";
+        var both_password_error = "您两次输入的密码不一致！";
+        var show_div_text = "请点击更新购物车按钮";
+        var show_div_exit = "关闭";
+    </script>
+    <div class="page-main" id="cart-box">
+        <div class="container">
+            <div class="cart-goods-list">
+                <div class="list-head clearfix">
+                    <div class="col col-img" id="itemsnum-top">图片</div>
+                    <div class="col col-name">商品名称</div>
+                    <div class="col col-price">单价</div>
+                    <div class="col col-num">数量</div>
+                    <div class="col col-total">小计</div>
+                    <div class="col col-action">操作</div>
+                </div>
+                <div class="list-body">
+
+                    <div class="item-box">
+                        <div class="item-table">
+                            <div class="item-row clearfix">
+
+
+                                <div class="col col-img">
+                                    <a href="goods.php?id=27" target="_blank"> <img alt="小米电视2 40英寸" src="../images/201507/27_thumb_G_1437074702008.jpg"></a>
+                                </div>
+                                <div class="col col-name">
+                                    <h3 class="name"><a href="goods.php?id=27" target="_blank">小米电视2 40英寸 </a></h3>
+                                    <p class="desc">
+
+                                        <span>尺寸:45 
+颜色:黄[100] 
+</span>
+
+
+                                        </a>
+                                    </p>
+                                </div>
+
+                                <div class="col col-price">
+                                    2300.00<em>元</em> </div>
+                                <div class="col col-num">
+                                    <div class="change-goods-num clearfix">
+                                        <a href="javascript:void(0)" class="minus" title="减少1个数量" onclick="flowClickCartNum(14,-1);"><i class="iconfont"></i></a>
+                                        <input type="text" id="goods_number_14" value="1" onchange="flowClickCartNum(14,0)">
+                                        <a href="javascript:void(0)" class="add" title="增加1个数量" onclick="flowClickCartNum(14,+1);"><i class="iconfont"></i></a>
+                                    </div>
+                                </div>
+                                <div class="col col-total"><span id="total_items_14">2300.00<em>元</em></span></div>
+                                <div class="col col-action">
+                                    <a class="del" href="javascript:if (confirm('您确实要把该商品移出购物车吗？')) location.href='flow.php?step=drop_goods&amp;id=14';"><i class="iconfont"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-box">
+                        <div class="item-table">
+                            <div class="item-row clearfix">
+
+
+                                <div class="col col-img">
+                                    <a href="goods.php?id=31" target="_blank"> <img alt="小米移动电源10000mAh" src="../images/201507/31_thumb_G_1437075539254.jpg"></a>
+                                </div>
+                                <div class="col col-name">
+                                    <h3 class="name"><a href="goods.php?id=31" target="_blank">小米移动电源10000mAh </a></h3>
+                                    <p class="desc">
+
+                                        <span></span>
+
+
+                                        </a>
+                                    </p>
+                                </div>
+
+                                <div class="col col-price">
+                                    79.00<em>元</em> </div>
+                                <div class="col col-num">
+                                    <div class="change-goods-num clearfix">
+                                        <a href="javascript:void(0)" class="minus" title="减少1个数量" onclick="flowClickCartNum(13,-1);"><i class="iconfont"></i></a>
+                                        <input type="text" id="goods_number_13" value="2" onchange="flowClickCartNum(13,0)">
+                                        <a href="javascript:void(0)" class="add" title="增加1个数量" onclick="flowClickCartNum(13,+1);"><i class="iconfont"></i></a>
+                                    </div>
+                                </div>
+                                <div class="col col-total"><span id="total_items_13">158.00<em>元</em></span></div>
+                                <div class="col col-action">
+                                    <a class="del" href="javascript:if (confirm('您确实要把该商品移出购物车吗？')) location.href='flow.php?step=drop_goods&amp;id=13';"><i class="iconfont"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-box">
+                        <div class="item-table">
+                            <div class="item-row clearfix">
+
+
+                                <div class="col col-img">
+                                    <a href="goods.php?id=45" target="_blank"> <img alt="小米活塞耳机标准版" src="../images/201507/45_thumb_G_1437092199733.jpg"></a>
+                                </div>
+                                <div class="col col-name">
+                                    <h3 class="name"><a href="goods.php?id=45" target="_blank">小米活塞耳机标准版 </a></h3>
+                                    <p class="desc">
+
+                                        <span></span>
+
+
+                                        </a>
+                                    </p>
+                                </div>
+
+                                <div class="col col-price">
+                                    89.00<em>元</em> </div>
+                                <div class="col col-num">
+                                    <div class="change-goods-num clearfix">
+                                        <a href="javascript:void(0)" class="minus" title="减少1个数量" onclick="flowClickCartNum(15,-1);"><i class="iconfont"></i></a>
+                                        <input type="text" id="goods_number_15" value="1" onchange="flowClickCartNum(15,0)">
+                                        <a href="javascript:void(0)" class="add" title="增加1个数量" onclick="flowClickCartNum(15,+1);"><i class="iconfont"></i></a>
+                                    </div>
+                                </div>
+                                <div class="col col-total"><span id="total_items_15">89.00<em>元</em></span></div>
+                                <div class="col col-action">
+                                    <a class="del" href="javascript:if (confirm('您确实要把该商品移出购物车吗？')) location.href='flow.php?step=drop_goods&amp;id=15';"><i class="iconfont"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="clear-cart"> <a id="del-all" href="flow.php?step=clear">清空购物车</a> </p>
+
+                <div class="cart-bar clearfix">
+                    <div class="section-left">
+                        <a class="back-shopping btn btn-gray" href="./">继续购物</a>
+                    </div>
+                    <span class="total-price"><span class="total-num"></span>&nbsp;&nbsp;&nbsp;合计：<b id="totalSkuPrice">2547.00<em>元</em></b></span>
+                    <a href="flow.php?step=checkout" class="btn btn-pay btn-primary">去结算</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script type="text/javascript" charset="utf-8">
+        function collect_to_flow(goodsId) {
+            var goods = new Object();
+            var spec_arr = new Array();
+            var fittings_arr = new Array();
+            var number = 1;
+            goods.spec = spec_arr;
+            goods.goods_id = goodsId;
+            goods.number = number;
+            goods.parent = 0;
+            Ajax.call('flow.php?step=add_to_cart', 'goods=' + goods.toJSONString(), collect_to_flow_response, 'POST', 'JSON');
+        }
+
+        function collect_to_flow_response(result) {
+            if (result.error > 0) {
+                // 如果需要缺货登记，跳转
+                if (result.error == 2) {
+                    if (confirm(result.message)) {
+                        location.href = 'user.php?act=add_booking&id=' + result.goods_id;
+                    }
+                } else if (result.error == 6) {
+                    openSpeDiv(result.message, result.goods_id);
+                } else {
+                    alert(result.message);
+                }
+            } else {
+                location.href = 'flow.php';
+            }
+        }
+    </script>
+    </div>
+    <div class="blank"></div>
+
+
+
+
+    <script type="text/javascript" charset="utf-8">
+        function fittings_to_flow(goodsId, parentId) {
+            var goods = new Object();
+            var spec_arr = new Array();
+            var number = 1;
+            goods.spec = spec_arr;
+            goods.goods_id = goodsId;
+            goods.number = number;
+            goods.parent = parentId;
+            Ajax.call('flow.php?step=add_to_cart', 'goods=' + $.toJSON(goods), fittings_to_flow_response, 'POST', 'JSON');
+        }
+
+        function fittings_to_flow_response(result) {
+            if (result.error > 0) {
+                // 如果需要缺货登记，跳转
+                if (result.error == 2) {
+                    if (confirm(result.message)) {
+                        location.href = 'user.php?act=add_booking&id=' + result.goods_id;
+                    }
+                } else if (result.error == 6) {
+                    openSpeDiv(result.message, result.goods_id, result.parent);
+                } else {
+                    alert(result.message);
+                }
+            } else {
+                location.href = 'flow.php';
+            }
+        }
+    </script>
+    <div class="cart-recommend" id="page-btm">
+        <div class="container">
+            <h2 class="xm-recommend-title"><span>商品相关配件</span></h2>
+            <form action="flow.php" method="post">
+                <div class="xm-recommend">
+                    <ul class="row">
+                        <li class="span4">
+                            <dl>
+                                <dt>
+                        <a href="goods.php?id=31" target="_blank">
+                            <img alt="" src="../images/201507/31_thumb_G_1437075539254.jpg" style="display: inline;">
+                        </a>
+                      </dt>
+                                <dd class="xm-recommend-name"><a href="goods.php?id=31" target="_blank">小米移动电源10000mAh</a></dd>
+                                <dd class="xm-recommend-price">60<em>元</em></dd>
+                                <dd class="xm-recommend-tips">
+                                    <a href="javascript:fittings_to_flow(31,27)" class="btn btn-small btn-line-primary" id="add-cart">放入购物车</a>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li class="span4">
+                            <dl>
+                                <dt>
+                        <a href="goods.php?id=32" target="_blank">
+                            <img alt="" src="../images/201507/32_thumb_G_1437075765802.jpg" style="display: inline;">
+                        </a>
+                      </dt>
+                                <dd class="xm-recommend-name"><a href="goods.php?id=32" target="_blank">小米路由器 mini</a></dd>
+                                <dd class="xm-recommend-price">120<em>元</em></dd>
+                                <dd class="xm-recommend-tips">
+                                    <a href="javascript:fittings_to_flow(32,27)" class="btn btn-small btn-line-primary" id="add-cart">放入购物车</a>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li class="span4">
+                            <dl>
+                                <dt>
+                        <a href="goods.php?id=33" target="_blank">
+                            <img alt="" src="../images/201507/33_thumb_G_1437075865379.jpg" style="display: inline;">
+                        </a>
+                      </dt>
+                                <dd class="xm-recommend-name"><a href="goods.php?id=33" target="_blank">小蚁智能摄像机 标准</a></dd>
+                                <dd class="xm-recommend-price">119<em>元</em></dd>
+                                <dd class="xm-recommend-tips">
+                                    <a href="javascript:fittings_to_flow(33,27)" class="btn btn-small btn-line-primary" id="add-cart">放入购物车</a>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li class="span4">
+                            <dl>
+                                <dt>
+                        <a href="goods.php?id=34" target="_blank">
+                            <img alt="" src="../images/201507/34_thumb_G_1437076036973.jpg" style="display: inline;">
+                        </a>
+                      </dt>
+                                <dd class="xm-recommend-name"><a href="goods.php?id=34" target="_blank">小蚁运动相机</a></dd>
+                                <dd class="xm-recommend-price">299<em>元</em></dd>
+                                <dd class="xm-recommend-tips">
+                                    <a href="javascript:fittings_to_flow(34,27)" class="btn btn-small btn-line-primary" id="add-cart">放入购物车</a>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li class="span4">
+                            <dl>
+                                <dt>
+                        <a href="goods.php?id=35" target="_blank">
+                            <img alt="" src="../images/201507/35_thumb_G_1437081702649.jpg" style="display: inline;">
+                        </a>
+                      </dt>
+                                <dd class="xm-recommend-name"><a href="goods.php?id=35" target="_blank">小米空气净化器</a></dd>
+                                <dd class="xm-recommend-price">799<em>元</em></dd>
+                                <dd class="xm-recommend-tips">
+                                    <a href="javascript:fittings_to_flow(35,27)" class="btn btn-small btn-line-primary" id="add-cart">放入购物车</a>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li class="span4">
+                            <dl>
+                                <dt>
+                        <a href="goods.php?id=36" target="_blank">
+                            <img alt="" src="../images/201507/36_thumb_G_1437082145888.jpg" style="display: inline;">
+                        </a>
+                      </dt>
+                                <dd class="xm-recommend-name"><a href="goods.php?id=36" target="_blank">iHealth智能血压计</a></dd>
+                                <dd class="xm-recommend-price">129<em>元</em></dd>
+                                <dd class="xm-recommend-tips">
+                                    <a href="javascript:fittings_to_flow(36,27)" class="btn btn-small btn-line-primary" id="add-cart">放入购物车</a>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li class="span4">
+                            <dl>
+                                <dt>
+                        <a href="goods.php?id=37" target="_blank">
+                            <img alt="" src="../images/201507/37_thumb_G_1437082214575.jpg" style="display: inline;">
+                        </a>
+                      </dt>
+                                <dd class="xm-recommend-name"><a href="goods.php?id=37" target="_blank">小米智能插座</a></dd>
+                                <dd class="xm-recommend-price">49<em>元</em></dd>
+                                <dd class="xm-recommend-tips">
+                                    <a href="javascript:fittings_to_flow(37,27)" class="btn btn-small btn-line-primary" id="add-cart">放入购物车</a>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li class="span4">
+                            <dl>
+                                <dt>
+                        <a href="goods.php?id=44" target="_blank">
+                            <img alt="" src="../images/201507/44_thumb_G_1437092148601.jpg" style="display: inline;">
+                        </a>
+                      </dt>
+                                <dd class="xm-recommend-name"><a href="goods.php?id=44" target="_blank">小米移动电源5000mAh</a></dd>
+                                <dd class="xm-recommend-price">40<em>元</em></dd>
+                                <dd class="xm-recommend-tips">
+                                    <a href="javascript:fittings_to_flow(44,27)" class="btn btn-small btn-line-primary" id="add-cart">放入购物车</a>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li class="span4">
+                            <dl>
+                                <dt>
+                        <a href="goods.php?id=67" target="_blank">
+                            <img alt="" src="../images/201508/67_thumb_G_1440983638116.jpg" style="display: inline;">
+                        </a>
+                      </dt>
+                                <dd class="xm-recommend-name"><a href="goods.php?id=67" target="_blank">小米手环</a></dd>
+                                <dd class="xm-recommend-price">50<em>元</em></dd>
+                                <dd class="xm-recommend-tips">
+                                    <a href="javascript:fittings_to_flow(67,27)" class="btn btn-small btn-line-primary" id="add-cart">放入购物车</a>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li class="span4">
+                            <dl>
+                                <dt>
+                        <a href="goods.php?id=73" target="_blank">
+                            <img alt="" src="../images/201508/73_thumb_G_1440983937959.jpg" style="display: inline;">
+                        </a>
+                      </dt>
+                                <dd class="xm-recommend-name"><a href="goods.php?id=73" target="_blank">刀锋移动电源</a></dd>
+                                <dd class="xm-recommend-price">200<em>元</em></dd>
+                                <dd class="xm-recommend-tips">
+                                    <a href="javascript:fittings_to_flow(73,27)" class="btn btn-small btn-line-primary" id="add-cart">放入购物车</a>
+                                </dd>
+                            </dl>
+                        </li>
+                        <li class="span4">
+                            <dl>
+                                <dt>
+                        <a href="goods.php?id=75" target="_blank">
+                            <img alt="" src="../images/201508/75_thumb_G_1440984011595.jpg" style="display: inline;">
+                        </a>
+                      </dt>
+                                <dd class="xm-recommend-name"><a href="goods.php?id=75" target="_blank">多彩电源适配器</a></dd>
+                                <dd class="xm-recommend-price">16<em>元</em></dd>
+                                <dd class="xm-recommend-tips">
+                                    <a href="javascript:fittings_to_flow(75,27)" class="btn btn-small btn-line-primary" id="add-cart">放入购物车</a>
+                                </dd>
+                            </dl>
+                        </li>
+
+                    </ul>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="site-footer">
+        <div class="container">
+            <div class="footer-service">
+                <ul class="list-service clearfix">
+                    <li>
+                        <a rel="nofollow" href="javascript:void(0)">
+                            <i class="iconfont"></i>1小时快修服务
+                        </a>
+                    </li>
+                    <li>
+                        <a rel="nofollow" href="javascript:void(0)">
+                            <i class="iconfont"></i>7天无理由退货
+                        </a>
+                    </li>
+                    <li>
+                        <a rel="nofollow" href="javascript:void(0)">
+                            <i class="iconfont"></i>15天免费换货
+                        </a>
+                    </li>
+                    <li>
+                        <a rel="nofollow" href="javascript:void(0)">
+                            <i class="iconfont"></i>满150元包邮
+                        </a>
+                    </li>
+                    <li>
+                        <a rel="nofollow" href="javascript:void(0)">
+                            <i class="iconfont"></i>520余家售后网点
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-links clearfix">
+                <div class="blank"></div>
+
+                <dl class="col-links">
+                    <dt>帮助中心</dt>
+                    <dd>
+                        <a href="article.php?id=9" target="_blank" title="配送方式" rel="nofollow">配送方式</a>
+                    </dd>
+                    <dd>
+                        <a href="article.php?id=10" target="_blank" title="支付方式" rel="nofollow">支付方式</a>
+                    </dd>
+                    <dd>
+                        <a href="article.php?id=11" target="_blank" title="购物指南" rel="nofollow">购物指南</a>
+                    </dd>
+
+                </dl>
+
+
+                <dl class="col-links">
+                    <dt>服务支持</dt>
+                    <dd>
+                        <a href="article.php?id=21" target="_blank" title="相关下载" rel="nofollow">相关下载</a>
+                    </dd>
+                    <dd>
+                        <a href="article.php?id=22" target="_blank" title="自助服务" rel="nofollow">自助服务</a>
+                    </dd>
+                    <dd>
+                        <a href="article.php?id=23" target="_blank" title="售后政策" rel="nofollow">售后政策</a>
+                    </dd>
+
+                </dl>
+
+
+                <dl class="col-links">
+                    <dt>小米之家</dt>
+                    <dd>
+                        <a href="article.php?id=12" target="_blank" title="预约亲临到店服务" rel="nofollow">预约亲临到店服务</a>
+                    </dd>
+                    <dd>
+                        <a href="article.php?id=13" target="_blank" title="服务网点" rel="nofollow">服务网点</a>
+                    </dd>
+                    <dd>
+                        <a href="article.php?id=14" target="_blank" title="小米之家" rel="nofollow">小米之家</a>
+                    </dd>
+
+                </dl>
+
+
+                <dl class="col-links">
+                    <dt>关于小米</dt>
+                    <dd>
+                        <a href="article.php?id=24" target="_blank" title="联系小米" rel="nofollow">联系小米</a>
+                    </dd>
+                    <dd>
+                        <a href="article.php?id=25" target="_blank" title="加入小米" rel="nofollow">加入小米</a>
+                    </dd>
+                    <dd>
+                        <a href="article.php?id=26" target="_blank" title="了解小米" rel="nofollow">了解小米</a>
+                    </dd>
+
+                </dl>
+
+
+                <dl class="col-links">
+                    <dt>关注小米</dt>
+                    <dd>
+                        <a href="article.php?id=15" target="_blank" title="官方微信" rel="nofollow">官方微信</a>
+                    </dd>
+                    <dd>
+                        <a href="article.php?id=16" target="_blank" title="小米部落" rel="nofollow">小米部落</a>
+                    </dd>
+                    <dd>
+                        <a href="article.php?id=17" target="_blank" title="新浪微博" rel="nofollow">新浪微博</a>
+                    </dd>
+
+                </dl>
+
+
+
+
+
+
+                <div class="col-contact">
+                    <p class="phone">400-023-3005</p>
+                    <p>周一至周日 8:00-18:00<br>（仅收市话费）</p>
+                    <a rel="nofollow" class="btn btn-line-primary btn-small">
+                        <i class="iconfont"></i> 24小时在线客服
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="site-info">
+        <div class="container">
+            <div class="logo ir">小米官网</div>
+            <div class="info-text">
+                <p class="sites">
+                </p>
+                <p>
+                    ©<a href='#'>mi.com</a> 京ICP证110507号 京ICP备10046444号 京公网安备1101080212535号 <a href='#'>京网文[2014]0059-0009号</a>
+                </p>
+            </div>
+            <div class="info-links">
+                <a href="#"><img src="http://s1.mi.com/zt/12052601/cnnicVerifyseal.png" alt="可信网站"></a>
+                <a href="#"><img src="http://s1.mi.com/zt/12052601/szfwVerifyseal.gif" alt="诚信网站"></a>
+                <a href="#"><img src="http://s1.mi.com/zt/12052601/save.jpg" alt="网上交易保障中心"></a>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var process_request = "正在处理您的请求...";
+        var username_empty = "用户名不能为空。";
+        var username_shorter = "用户名长度不能少于 3 个字符。";
+        var username_invalid = "用户名只能是由字母数字以及下划线组成。";
+        var password_empty = "登录密码不能为空。";
+        var password_shorter = "登录密码不能少于 6 个字符。";
+        var confirm_password_invalid = "两次输入密码不一致";
+        var email_empty = "Email 为空";
+        var email_invalid = "Email 不是合法的地址";
+        var agreement = "您没有接受协议";
+        var msn_invalid = "msn地址不是一个有效的邮件地址";
+        var qq_invalid = "QQ号码不是一个有效的号码";
+        var home_phone_invalid = "家庭电话不是一个有效号码";
+        var office_phone_invalid = "办公电话不是一个有效号码";
+        var mobile_phone_invalid = "手机号码不是一个有效号码";
+        var msg_un_blank = "用户名不能为空";
+        var msg_un_length = "用户名最长不得超过7个汉字";
+        var msg_un_format = "用户名含有非法字符";
+        var msg_un_registered = "用户名已经存在,请重新输入";
+        var msg_can_rg = "可以注册";
+        var msg_email_blank = "邮件地址不能为空";
+        var msg_email_registered = "邮箱已存在,请重新输入";
+        var msg_email_format = "邮件地址不合法";
+        var msg_blank = "不能为空";
+        var no_select_question = "您没有完成密码提示问题的操作";
+        var passwd_balnk = "- 密码中不能包含空格";
+        var username_exist = "用户名 %s 已经存在";
+        var compare_no_goods = "您没有选定任何需要比较的商品或者比较的商品数少于 2 个。";
+        var btn_buy = "购买";
+        var is_cancel = "取消";
+        var select_spe = "请选择商品属性";
+    </script>
+</body>
+
+</html>
