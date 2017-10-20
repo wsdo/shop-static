@@ -275,8 +275,8 @@ a:hover {
 
 @font-face {
     font-family: 'iconfont';
-    src: url("iconfont.eot");
-    src: url("iconfont.eot?#iefix") format("embedded-opentype")
+    /* src: url("iconfont.eot"); */
+    /* src: url("iconfont.eot?#iefix") format("embedded-opentype") */
 }
 
 @font-face {
@@ -537,7 +537,7 @@ a:hover {
     height: 63px;
     text-indent: -9999em;
     overflow: hidden;
-    background-image: url("images/iconTag.png");
+    /* background-image: url("images/iconTag.png"); */
     background-repeat: no-repeat
 }
 
@@ -2622,7 +2622,7 @@ a:hover {
     width: 36px;
     height: 36px;
     margin-right: 10px;
-    background: url(images/logo-footer.png) no-repeat 50% 50%;
+    /* background: url(images/logo-footer.png) no-repeat 50% 50%; */
 }
 
 .site-info .info-text {
@@ -3023,7 +3023,7 @@ a:hover {
     margin-right: 15px;
     width: 61px;
     height: 66px;
-    background: url(images/addok.png) no-repeat center 10px;
+    /* background: url(images/addok.png) no-repeat center 10px; */
     display: inline-block;
     zoom: 1;
     *display: inline;
